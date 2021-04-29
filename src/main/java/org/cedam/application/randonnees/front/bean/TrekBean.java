@@ -1,4 +1,4 @@
-package org.cedam.application.randonnees.randonneesfront.bean;
+package org.cedam.application.randonnees.front.bean;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,5 @@
-package org.cedam.application.randonnees.randonneesfront.bean;
+package org.cedam.application.randonnees.front.bean;
+
 
 public class DayBean {
 

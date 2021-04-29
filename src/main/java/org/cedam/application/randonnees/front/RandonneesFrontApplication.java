@@ -1,4 +1,4 @@
-package org.cedam.application.randonnees.randonneesfront;
+package org.cedam.application.randonnees.front;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public class RandonneesFrontApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RandonneesFrontApplication.class, args);
+		SpringApplication.run(RandonneesFrontApplication.class);
 	}
 
 }
