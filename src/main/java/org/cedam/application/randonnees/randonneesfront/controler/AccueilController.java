@@ -20,7 +20,7 @@ public class AccueilController {
     	
     	List<TrekBean> treks =  trekServiceProxy.listeDesTreks();
     	model.addAttribute("treks", treks);
-        return "Accueil";
+        return "Accueil1";
     }
     
 }
