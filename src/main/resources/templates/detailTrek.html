@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Randonnees</title>
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h1>Trek detail</h1>
+
+		<div class="row">
+			<p>
+				<label>Id :</label><label th:text="${trek.id}"></label>
+			</p>
+			<p>
+				<label>Nom :</label><label th:text="${trek.name}"></label>
+			</p>
+			<p>
+				<label>Annee :</label><label th:text="${trek.year}"></label>
+			</p>
+			<p>
+				<label>Localisation :</label><label th:text="${trek.location}"></label>
+			</p>
+
+			<div th:each="day : ${trek.days}" class="col-md-4 my-1">
+				<label>Id jour :</label>
+				<p th:text="${day.id}"></p>
+				<a th:href="${day.url}">Lien day</a>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<form th:action="@{/trek/save/} + ${trek.id}" method="get">
+				<button type="submit">Modifier</button>
+			</form>
+			<br> <a th:href="@{/accueil}">Acceuil</a>
+		</div>
+
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script type="text/javascript" src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

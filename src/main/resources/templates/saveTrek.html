@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Randonnees</title>
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h1 th:utext="${title}" />
+		
+		<form th:action="@{/trek/save}" th:object="${trekForm}" method="POST">
+
+			<p>
+				<label>Nom :</label><input type="text" th:field="*{name}"></input>
+			</p>
+			<p>
+				<label>Annee :</label><input type="text" th:field="*{year}"></input>
+			</p>
+			<p>
+				<label>Localisation :</label><input type="text" th:field="*{location}"></input>
+			</p>
+			<p>
+				<input type="submit" th:value="${actionLibelle}"></input><br>
+				<a th:href="@{/accueil}">Acceuil</a><br>
+			</p>
+		</form>
+
+		<div class="row">
+			<!-- Check if errorMessage is not null and not empty -->
+			<div th:if="${errorMessage}" th:utext="${errorMessage}"></div>
+		</div>
+		
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script type="text/javascript" src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,31 +1,32 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 <title>Randonnees</title>
-
 <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
-
 </head>
-<body>
 
+<body>
 
 	<div class="container">
 
-		<h1>Randonnees</h1>
+		<h1>Day detail</h1>
 
 		<div class="row">
-			<div th:each="trek : ${treks}" class="col-md-4 my-1">
-				<p th:text="${trek.id}"></p>
-				<p th:text="${trek.name}"></p>
-			</div>
+			<p>
+				<label>Id :</label><label th:text="${day.id}"></label>
+			</p>
+			<p>
+				<label>Numero :</label><label th:text="${day.number}"></label>
+			</p>
 		</div>
 
+		<br> <a th:href="@{/accueil}">Acceuil</a><br>
 	</div>
-
-
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script type="text/javascript" src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

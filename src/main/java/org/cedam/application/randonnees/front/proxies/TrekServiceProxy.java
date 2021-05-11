@@ -6,15 +6,20 @@ import org.cedam.application.randonnees.front.bean.TrekBean;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
-@FeignClient(name = "apprandonnees-back", url = "localhost:8085", path = "/treks")
+@FeignClient(name = "randonnees-back-trek", url = "localhost:8085", path = "/treks")
 public interface TrekServiceProxy {
 
     @GetMapping(value = "")
-    List<TrekBean> listeDesTreks();
+    List<TrekBean> getAll();
 
-    @GetMapping( value = "/{id}")
-    TrekBean recupererUnTrek(@PathVariable("id") int id);
+    @GetMapping(value = "/id?id={id}")
+    TrekBean getById(@PathVariable("id") int id);
+
+    @PostMapping(value = "/save")
+    TrekBean save(@RequestBody TrekBean trek);
 
 }

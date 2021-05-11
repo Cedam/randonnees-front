@@ -9,18 +9,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
+@Controller()
 public class AccueilController {
 
     @Autowired
     private TrekServiceProxy trekServiceProxy;
     
-    @GetMapping("/")
+    @GetMapping(value = {"/", "/accueil"})
     public String accueil(Model model){
+
+    	List<TrekBean> treks =  trekServiceProxy.getAll();
     	
-    	List<TrekBean> treks =  trekServiceProxy.listeDesTreks();
-    	model.addAttribute("treks", treks);
-        return "Accueil";
+    	treks.forEach(x -> {
+    		x.setUrl("/trek/"+x.getId());
+    	});
+    	
+    	model.addAttribute("treks", treks);    
+         
+        return "accueil";
     }
     
 }

@@ -8,15 +8,16 @@ import lombok.Setter;
 @Service
 @Getter
 @Setter
-public class DayBean {
-
+public class Post {
+	
 	private long id;
 
-	private String number;
+	private String name;
 
-	private String url;
+	private int year;
+
+	private String location;
 	
-	private TrekBean trek;
-
+	private String url;
 
 }
