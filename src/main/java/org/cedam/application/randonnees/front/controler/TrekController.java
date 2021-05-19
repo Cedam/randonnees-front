@@ -62,7 +62,7 @@ public class TrekController extends SuperControler {
 			model.addAttribute(ATT_TREK, trekCreate);
 		} catch (Exception ex) {
 			model.addAttribute(ATT_TREK_FORM, trek);
-			model.addAttribute(ATT_ERROR_MESSAGE, "Contact not found");
+			model.addAttribute(ATT_ERROR_MESSAGE, "saveTrek error : "+ex.getMessage());
 			return VIEW_TREK_CREATE;
 		}
 
