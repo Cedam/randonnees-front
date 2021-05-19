@@ -29,6 +29,8 @@ public class TrekControllerTest {
 	public void testUpdateTrek() throws Exception {
 		this.mockMvc.perform(get("/treks/save/" + Constante.TREK_TEST_ID_1)).andExpect(status().isOk())
 				.andExpect(model().attributeExists("trekForm"));
+		this.mockMvc.perform(get("/treks/save/")).andExpect(status().isOk())
+		.andExpect(model().attributeExists("trekForm"));
 		this.mockMvc.perform(get("/treksFalse")).andExpect(status().is4xxClientError());
 	}
 
