@@ -12,7 +12,7 @@
 
 		<h1 th:utext="${title}" />
 		
-		<form th:action="@{/trek/save}" th:object="${trekForm}" method="POST">
+		<form th:action="@{/treks/save}" th:object="${trekForm}" method="POST">
 
 			<p>
 				<label>Nom :</label><input type="text" th:field="*{name}"></input>
@@ -25,7 +25,7 @@
 			</p>
 			<p>
 				<input type="submit" th:value="${actionLibelle}"></input><br>
-				<a th:href="@{/accueil}">Acceuil</a><br>
+				<a th:href="@{/accueil}">Accueil</a><br>
 			</p>
 		</form>
 
