@@ -4,7 +4,6 @@ import java.util.Optional;
 
 import org.cedam.application.randonnees.front.bean.TrekBean;
 import org.cedam.application.randonnees.front.proxies.TrekServiceProxy;
-import org.cedam.application.randonnees.front.utils.ViewsName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/treks")
-public class TrekController extends ViewsName {
+public class TrekController extends SuperControler {
 
 	@Autowired
 	private TrekServiceProxy trekServiceProxy;

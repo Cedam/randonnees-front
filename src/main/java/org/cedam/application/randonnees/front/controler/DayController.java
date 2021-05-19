@@ -2,7 +2,6 @@ package org.cedam.application.randonnees.front.controler;
 
 import org.cedam.application.randonnees.front.bean.DayBean;
 import org.cedam.application.randonnees.front.proxies.DayServiceProxy;
-import org.cedam.application.randonnees.front.utils.ViewsName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/days")
-public class DayController extends ViewsName {
+public class DayController extends SuperControler {
 
 	@Autowired
 	private DayServiceProxy dayServiceProxy;
