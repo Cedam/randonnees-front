@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller()
-public class AccueilController implements ViewsName {
+public class AccueilController extends ViewsName {
 
 	@Autowired
 	private TrekServiceProxy trekServiceProxy;
@@ -22,9 +22,7 @@ public class AccueilController implements ViewsName {
 	public String accueil(Model model) {
 
 		List<TrekBean> treks = trekServiceProxy.getAll();
-
 		treks.forEach(x -> x.setUrl("/treks/" + x.getId()));
-
 		model.addAttribute(ATT_TREKS, treks);
 
 		return VIEW_ACCUEIL;

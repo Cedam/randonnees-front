@@ -1,6 +1,6 @@
 package org.cedam.application.randonnees.front.utils;
 
-public interface ViewsName {
+public class ViewsName {
 
 	public static final String VIEW_ACCUEIL = "accueil";
 	

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/treks")
-public class TrekController implements ViewsName {
+public class TrekController extends ViewsName {
 
 	@Autowired
 	private TrekServiceProxy trekServiceProxy;
@@ -39,7 +39,7 @@ public class TrekController implements ViewsName {
 	}
 
 	@GetMapping(value = { "/save", "/save/{id}" })
-	public String updateTrek(Model model, @PathVariable("id") Optional<Integer> id) {
+	public String saveTrek(Model model, @PathVariable("id") Optional<Integer> id) {
 
 		if (id.isPresent()) {
 			model.addAttribute(ATT_TREK_FORM, trekServiceProxy.getById(id.get()));

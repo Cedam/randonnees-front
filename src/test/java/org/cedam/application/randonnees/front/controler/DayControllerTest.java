@@ -1,21 +1,27 @@
 package org.cedam.application.randonnees.front.controler;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.cedam.application.randonnees.front.test.mock.Constante;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.ui.Model;
+import org.springframework.test.web.servlet.MockMvc;
+
 
 @SpringBootTest
+@AutoConfigureMockMvc
 public class DayControllerTest {
 
 	@Autowired
-	private DayController dayController;
-	
-	@Autowired
-	Model model;
+	private MockMvc mockMvc;
 	
 	@Test
-	public void testTrekById() {
-		dayController.trekById(model, 0);
+	public void testTrekById() throws Exception {
+		this.mockMvc.perform(get("/days/"+Constante.DAY_TEST_ID_1)).andExpect(status().isOk()).andExpect(model().attributeExists("day"));
+		this.mockMvc.perform(get("/daysFalse")).andExpect(status().is4xxClientError());
 	}
 
 

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/days")
-public class DayController implements ViewsName {
+public class DayController extends ViewsName {
 
 	@Autowired
 	private DayServiceProxy dayServiceProxy;
