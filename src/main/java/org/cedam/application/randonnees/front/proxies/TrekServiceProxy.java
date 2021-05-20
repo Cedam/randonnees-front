@@ -16,7 +16,7 @@ public interface TrekServiceProxy {
     @GetMapping(value = "")
     List<TrekBean> getAll();
 
-    @GetMapping(value = "/id?id={id}")
+    @GetMapping(value = "/{id}")
     TrekBean getById(@PathVariable("id") long id);
 
     @PostMapping(value = "/save")

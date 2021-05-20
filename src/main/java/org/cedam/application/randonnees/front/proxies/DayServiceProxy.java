@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "randonnees-back-day", url = "localhost:8085", path = "/days")
 public interface DayServiceProxy {
 
-    @GetMapping(value = "/id?id={id}")
+    @GetMapping(value = "/{id}")
     DayBean getById(@PathVariable("id") long id);
 
 }

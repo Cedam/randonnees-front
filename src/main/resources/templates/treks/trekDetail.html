@@ -3,7 +3,7 @@
 
 <head>
 <title>Randonnees</title>
-<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 
 <body>
@@ -12,7 +12,7 @@
 
 		<h1>Trek detail</h1>
 
-		<div class="row">
+		<div>
 			<p>
 				<label>Id :</label><label th:text="${trek.id}"></label>
 			</p>
@@ -25,26 +25,28 @@
 			<p>
 				<label>Localisation :</label><label th:text="${trek.location}"></label>
 			</p>
-
+		</div>
+		<div class="row">
 			<div th:each="day : ${trek.days}" class="col-md-4 my-1">
 				<label>Id jour :</label>
 				<p th:text="${day.id}"></p>
-				<a th:href="${day.url}">Lien day</a>
+				<a th:href="${day.url}" class="btn btn-info m-2">Lien day</a>
 			</div>
 		</div>
+
 
 		<div class="row">
 
 			<form th:action="@{/treks/save/} + ${trek.id}" method="get">
-				<button type="submit">Modifier</button>
+				<button type="submit" class="btn btn-info m-2">Modifier</button>
 			</form>
-			<br> <a th:href="@{/accueil}">Accueil</a>
+			<br> <a th:href="@{/accueil}" class="btn btn-info m-2">Accueil</a>
 		</div>
 
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	<script type="text/javascript" src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
 
