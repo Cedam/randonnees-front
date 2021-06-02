@@ -12,14 +12,20 @@
 
 		<h1>Day detail</h1>
 
-			<p>
-				<label>Id :</label><label th:text="${day.id}"></label>
-			</p>
-			<p>
-				<label>Numero :</label><label th:text="${day.number}"></label>
-			</p>
+		<p>
+			<label>Id :</label><label th:text="${day.id}"></label>
+		</p>
+		<p>
+			<label>Numero :</label><label th:text="${day.number}"></label>
+		</p>
 
-		<br> <a th:href="@{/accueil}" class="btn btn-info m-2">Accueil</a><br>
+		<div class="row">
+			<form th:action="@{/days/save/} + ${day.id}" method="get">
+				<button type="submit" class="btn btn-info m-2">Modifier</button>
+			</form>
+			<br> <a th:href="@{/accueil}" class="btn btn-info m-2">Accueil</a>
+		</div>
+
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>

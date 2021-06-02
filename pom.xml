@@ -20,7 +20,6 @@
 	<properties>
 		<java.version>12</java.version>
 		<spring-cloud.version>2020.0.2</spring-cloud.version>
-
 		<jacoco.version>0.8.2</jacoco.version>
 	</properties>
 

@@ -10,7 +10,7 @@
 
 	<div class="container">
 
-		<h1>Randonnees></h1>
+		<h1>Randonnees</h1>
 
 		<div class="row">
 			<div th:each="trek : ${treks}" class="col-md-4 my-1 pt-5">
@@ -22,13 +22,22 @@
 
 		<div class="row pt-5">
 			<a href="/treks/save" class="btn btn-info m-2">Creer un nouveau trek</a>
-			
+
 		</div>
 
+		<div th:include="components/menu :: fragment"></div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script type="text/javascript" src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+	<!-- <a th:href="@{ hello(nom=${ personne.nom }) }">Hello</a> -->
+	<!-- <!-- En HTML, <a href="hello?nom=wick">Hello</a> -->
+	-->
+	<!-- <a th:href="@{ hello/{nom}(nom=${ personne.nom }) }">Hello</a> -->
+	<!-- <!-- En HTML, <a href="hello/wick">Hello</a> -->
+	-->
 
 </body>
 
