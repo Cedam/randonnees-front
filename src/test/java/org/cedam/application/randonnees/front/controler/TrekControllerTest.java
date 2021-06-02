@@ -40,9 +40,9 @@ public class TrekControllerTest {
 	public void testSaveTrekPost() throws Exception {
 		this.mockMvc.perform(post("/treks/save").flashAttr("trek", Constante.getTrek())).andExpect(status().isOk())
 				.andExpect(model().attributeExists("trek"));
-		assertThrows(Exception.class, () -> {
-			this.mockMvc.perform(post("/treks/save").flashAttr("trek", new TrekBean()));
-		});
+		
+		this.mockMvc.perform(post("/treks/save").flashAttr("trek", new TrekBean())).andExpect(status().isOk())
+		.andExpect(model().attributeExists("errorMessage"));
 	}
 
 }
