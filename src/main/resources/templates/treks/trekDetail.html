@@ -10,44 +10,65 @@
 
 	<div class="container">
 
-		<h1>Trek detail</h1>
+		<h1>Trek detail2</h1>
 
 		<div>
-			<p>
-				<label>Id :</label><label th:text="${trek.id}"></label>
-			</p>
-			<p>
-				<label>Nom :</label><label th:text="${trek.name}"></label>
-			</p>
-			<p>
-				<label>Annee :</label><label th:text="${trek.year}"></label>
-			</p>
-			<p>
-				<label>Localisation :</label><label th:text="${trek.location}"></label>
-			</p>
-		</div>
-		<div class="row">
-			<div th:each="day : ${trek.days}" class="col-md-4 my-1">
-				<label>Id jour :</label>
-				<p th:text="${day.id}"></p>
-				<a th:href="${day.url}" class="btn btn-info m-2">Lien day</a>
+			<div>
+
+				<div class="row">
+					<label>Id :</label><label th:text="${trek.id}"></label>
+				</div>
+				<div class="row">
+					<label>Nom :</label><label th:text="${trek.name}"></label>
+				</div>
+				<div class="row">
+					<label>Annee :</label><label th:text="${trek.year}"></label>
+				</div>
+				<div class="row">
+					<label>Localisation :</label><label th:text="${trek.location}"></label>
+				</div>
+
 			</div>
+
+			<div>
+
+				<div class="row">
+					<label>Liste des jours :</label>
+				</div>
+				<div class="row">
+					<div th:each="day : ${trek.days}" class="col-md-4 border">
+						<div class="row">
+							<label>Id jour :</label>
+							<p th:text="${day.id}"></p>
+						</div>
+						<div class="row">
+							<a th:href="${day.url}" class="btn btn-info">Lien day</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
 		</div>
+
 
 
 		<div class="row">
 
-			<form th:action="@{/treks/save/} + ${trek.id}" method="get">
+			<form th:action="@{/treks/save/} + ${trek.id}" method="GET">
 				<button type="submit" class="btn btn-info m-2">Modifier</button>
 			</form>
+			<form th:action="@{/treks/{trekId}/days/new (trekId=${trek.Id})}" method="GET">
+				<button type="submit" class="btn btn-info m-2">Ajouter une etape</button>
+			</form>
 			<br> <a th:href="@{/accueil}" class="btn btn-info m-2">Accueil</a>
+
 		</div>
 
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script type="text/javascript" src="../webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
