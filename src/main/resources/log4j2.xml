@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Configuration status="WARN" monitorInterval="30">
+
+	<Properties>
+		<Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss} %p %m%n</Property>
+	</Properties>
+	
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+
+		<RollingFile name="appLog" fileName="logs/application.log"
+	filePattern="logs/application-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="19500KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="3" />
+		</RollingFile>
+	</Appenders>
+	
+	<Loggers>
+		<Root level="INFO">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="appLog" />
+		</Root>
+	</Loggers>
+	
+</Configuration>

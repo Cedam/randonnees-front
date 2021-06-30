@@ -15,14 +15,6 @@ public class Constante {
 		return trek;
 	}
 	
-	public static TrekBean getTrek2() {
-		var trek = new TrekBean();
-		trek.setId(TREK_TEST_ID_2);
-		trek.setName(TREK_TEST_NAME_2);
-		trek.setLocation(TREK_TEST_LOCATION_2);
-		return trek;
-	}
-
 	public static DayBean getDay() {
 		var day = new DayBean();
 		day.setNumber(DAY_TEST_NUMBER_1);

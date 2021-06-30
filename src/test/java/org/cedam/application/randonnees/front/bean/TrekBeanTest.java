@@ -14,7 +14,7 @@ public class TrekBeanTest {
 	public void test() {
 		var id = 1;
 		var name = "name";
-		var year = 99;
+		var year = "99";
 		var location = "location";
 		var days = new ArrayList<DayBean>();
 		days.add(new DayBean());
