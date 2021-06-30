@@ -13,6 +13,7 @@ public class RandonneesFrontApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RandonneesFrontApplication.class);
+		//TEST COMMIT
 	}
 
 }
