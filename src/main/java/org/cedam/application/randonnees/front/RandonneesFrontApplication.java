@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients("org.cedam.application")
+@EnableFeignClients("org.cedam.application.front")
 @EnableDiscoveryClient
 public class RandonneesFrontApplication {
 
