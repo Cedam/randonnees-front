@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
-@FeignClient(name = "randonnees-back-trek", url = "localhost:8085", path = "/treks")
+@FeignClient(name = "randonnees-back-trek", url = "${randonnees.back.url}", path = "/treks")
 public interface TrekServiceProxy {
 
     @GetMapping(value = "")
