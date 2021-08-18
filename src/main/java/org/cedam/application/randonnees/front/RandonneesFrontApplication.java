@@ -7,13 +7,12 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 
 @SpringBootApplication
-@EnableFeignClients("org.cedam.application.front")
+@EnableFeignClients("org.cedam.application")
 @EnableDiscoveryClient
 public class RandonneesFrontApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RandonneesFrontApplication.class);
-		//TEST COMMIT
 	}
 
 }
