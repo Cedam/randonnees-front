@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
-@FeignClient(name = "randonnees-back-day", url = "localhost:8085", path = "/days")
+@FeignClient(name = "randonnees-back-day", url = "${randonnees.back.url}", path = "/days")
 public interface DayServiceProxy {
 
     @GetMapping(value = "/{id}")
