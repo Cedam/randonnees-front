@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.security.RolesAllowed;
+
 @Controller
 @RequestMapping("/treks")
 public class TrekController extends SuperControler {
@@ -68,5 +70,21 @@ public class TrekController extends SuperControler {
 
 		return VIEW_TREK_DETAIL;
 	}
+
+	@RolesAllowed("USER")
+	@RequestMapping("/u*")
+	public String getUser()
+	{
+		return "Welcome User";
+	}
+
+	@RolesAllowed({"USER","ADMIN"})
+	@RequestMapping("/admin")
+	public String getAdmin()
+	{
+		return "Welcome Admin";
+	}
+
+
 
 }

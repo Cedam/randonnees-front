@@ -42,9 +42,7 @@ public class TrekServiceProxyTest {
 		trekOutDto = object.save(trekInDto);
 		assertThat(Constante.TREK_TEST_ID_1).isEqualTo(trekOutDto.getId());
 
-		assertThrows(Exception.class, () -> {
-			object.save(null);
-		});
+		assertThrows(Exception.class, () -> object.save(null));
 	}
 
 }
