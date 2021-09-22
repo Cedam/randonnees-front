@@ -1,14 +1,14 @@
 # Randonnees-front
 
-##Projets liés
+## Projets liés
 **Utilise  :**
 - randonnees-v2
 
-##Exécuter
+## Exécuter
 
 >java -jar randonnees-front-0.0.1-SNAPSHOT.jar
 > 
-##Dépendances
+## Dépendances
 - Java 11
 - JUnit 5
 - Dozer 5.4
@@ -17,13 +17,13 @@
 
 ---
 
-##Sources
-###Github
+## Sources
+### Github
 Back : https://github.com/Cedam/randonnees-v2 </br>
 Front : https://github.com/Cedam/randonnees-front </br>
 Batch : https://github.com/Cedam/randonnees-batch-import-from-files
 
-###GitLab (automatic mirrored from Github)
+### GitLab (automatic mirrored from Github)
 https://gitlab.com/cedam56/randonnees-v2 </br>
 https://gitlab.com/cedam56/randonnees-front
 
